@@ -6,6 +6,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using FoozballBets;
+using System.Data.Entity;
+using FoozballBets.Models;
 
 namespace FoozballBets
 {
@@ -16,6 +18,8 @@ namespace FoozballBets
 			// Code that runs on application startup
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 			AuthConfig.RegisterOpenAuth();
+
+			Database.SetInitializer<FoozballBetsEntities1>(new Devtalk.EF.CodeFirst.DontDropDbJustCreateTablesIfModelChanged<FoozballBetsEntities1>());
 		}
 
 		void Application_End(object sender, EventArgs e)
