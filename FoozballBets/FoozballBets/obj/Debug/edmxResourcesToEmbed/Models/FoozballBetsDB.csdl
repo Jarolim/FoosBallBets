@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FoozballBetsModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="FoozballBetsEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Applications" EntityType="FoozballBetsModel.Application" />
+    <EntitySet Name="Bets" EntityType="FoozballBetsModel.Bet" />
+    <EntitySet Name="Matches" EntityType="FoozballBetsModel.Match" />
+    <EntitySet Name="Memberships" EntityType="FoozballBetsModel.Membership" />
+    <EntitySet Name="Profiles" EntityType="FoozballBetsModel.Profile" />
+    <EntitySet Name="ProfilesBSHes" EntityType="FoozballBetsModel.ProfilesBSH" />
+    <EntitySet Name="Roles" EntityType="FoozballBetsModel.Role" />
+    <EntitySet Name="sysdiagrams" EntityType="FoozballBetsModel.sysdiagram" />
+    <EntitySet Name="Teams" EntityType="FoozballBetsModel.Team" />
+    <EntitySet Name="Users" EntityType="FoozballBetsModel.User" />
+    <AssociationSet Name="MembershipApplication" Association="FoozballBetsModel.MembershipApplication">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Memberships" EntitySet="Memberships" />
+    </AssociationSet>
+    <AssociationSet Name="RoleApplication" Association="FoozballBetsModel.RoleApplication">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Roles" EntitySet="Roles" />
+    </AssociationSet>
+    <AssociationSet Name="UserApplication" Association="FoozballBetsModel.UserApplication">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bets_Matches" Association="FoozballBetsModel.FK_Bets_Matches">
+      <End Role="Matches" EntitySet="Matches" />
+      <End Role="Bets" EntitySet="Bets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bets_ProfilesBSH" Association="FoozballBetsModel.FK_Bets_ProfilesBSH">
+      <End Role="ProfilesBSH" EntitySet="ProfilesBSHes" />
+      <End Role="Bets" EntitySet="Bets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Matches_Teams" Association="FoozballBetsModel.FK_Matches_Teams">
+      <End Role="Teams" EntitySet="Teams" />
+      <End Role="Matches" EntitySet="Matches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Matches_Teams1" Association="FoozballBetsModel.FK_Matches_Teams1">
+      <End Role="Teams" EntitySet="Teams" />
+      <End Role="Matches" EntitySet="Matches" />
+    </AssociationSet>
+    <AssociationSet Name="MembershipUser" Association="FoozballBetsModel.MembershipUser">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Memberships" EntitySet="Memberships" />
+    </AssociationSet>
+    <AssociationSet Name="UserProfile" Association="FoozballBetsModel.UserProfile">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Profiles" EntitySet="Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfilesBSH_Teams" Association="FoozballBetsModel.FK_ProfilesBSH_Teams">
+      <End Role="Teams" EntitySet="Teams" />
+      <End Role="ProfilesBSH" EntitySet="ProfilesBSHes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfilesBSH_Users" Association="FoozballBetsModel.FK_ProfilesBSH_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ProfilesBSH" EntitySet="ProfilesBSHes" />
+    </AssociationSet>
+    <AssociationSet Name="UsersInRoles" Association="FoozballBetsModel.UsersInRoles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="235" Unicode="true" FixedLength="false" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Memberships" Relationship="FoozballBetsModel.MembershipApplication" FromRole="Applications" ToRole="Memberships" />
+    <NavigationProperty Name="Roles" Relationship="FoozballBetsModel.RoleApplication" FromRole="Applications" ToRole="Roles" />
+    <NavigationProperty Name="Users" Relationship="FoozballBetsModel.UserApplication" FromRole="Applications" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Bet">
+    <Key>
+      <PropertyRef Name="BetId" />
+    </Key>
+    <Property Name="BetId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="BetValue" Type="Int32" Nullable="false" />
+    <Property Name="BetForecast" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MatchId" Type="Int32" Nullable="false" />
+    <Property Name="ProfileId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Match" Relationship="FoozballBetsModel.FK_Bets_Matches" FromRole="Bets" ToRole="Matches" />
+    <NavigationProperty Name="ProfilesBSH" Relationship="FoozballBetsModel.FK_Bets_ProfilesBSH" FromRole="Bets" ToRole="ProfilesBSH" />
+  </EntityType>
+  <EntityType Name="Match">
+    <Key>
+      <PropertyRef Name="MatchId" />
+    </Key>
+    <Property Name="MatchId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MatchResult" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Team1Id" Type="Int32" Nullable="false" />
+    <Property Name="Team2Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bets" Relationship="FoozballBetsModel.FK_Bets_Matches" FromRole="Matches" ToRole="Bets" />
+    <NavigationProperty Name="Team" Relationship="FoozballBetsModel.FK_Matches_Teams" FromRole="Matches" ToRole="Teams" />
+    <NavigationProperty Name="Team1" Relationship="FoozballBetsModel.FK_Matches_Teams1" FromRole="Matches" ToRole="Teams" />
+  </EntityType>
+  <EntityType Name="Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Comment" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Application" Relationship="FoozballBetsModel.MembershipApplication" FromRole="Memberships" ToRole="Applications" />
+    <NavigationProperty Name="User" Relationship="FoozballBetsModel.MembershipUser" FromRole="Memberships" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="PropertyNames" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="PropertyValueStrings" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="PropertyValueBinary" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="User" Relationship="FoozballBetsModel.UserProfile" FromRole="Profiles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="ProfilesBSH">
+    <Key>
+      <PropertyRef Name="ProfileId" />
+    </Key>
+    <Property Name="ProfileId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ProfilePicPath" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Points" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="TeamId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bets" Relationship="FoozballBetsModel.FK_Bets_ProfilesBSH" FromRole="ProfilesBSH" ToRole="Bets" />
+    <NavigationProperty Name="Team" Relationship="FoozballBetsModel.FK_ProfilesBSH_Teams" FromRole="ProfilesBSH" ToRole="Teams" />
+    <NavigationProperty Name="User" Relationship="FoozballBetsModel.FK_ProfilesBSH_Users" FromRole="ProfilesBSH" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Application" Relationship="FoozballBetsModel.RoleApplication" FromRole="Roles" ToRole="Applications" />
+    <NavigationProperty Name="Users" Relationship="FoozballBetsModel.UsersInRoles" FromRole="Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="TeamId" />
+    </Key>
+    <Property Name="TeamId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TeamName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="TeamWins" Type="Int32" Nullable="false" />
+    <Property Name="TeamLoses" Type="Int32" Nullable="false" />
+    <Property Name="TeamDraws" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Matches" Relationship="FoozballBetsModel.FK_Matches_Teams" FromRole="Teams" ToRole="Matches" />
+    <NavigationProperty Name="Matches1" Relationship="FoozballBetsModel.FK_Matches_Teams1" FromRole="Teams" ToRole="Matches" />
+    <NavigationProperty Name="ProfilesBSHes" Relationship="FoozballBetsModel.FK_ProfilesBSH_Teams" FromRole="Teams" ToRole="ProfilesBSH" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Application" Relationship="FoozballBetsModel.UserApplication" FromRole="Users" ToRole="Applications" />
+    <NavigationProperty Name="Membership" Relationship="FoozballBetsModel.MembershipUser" FromRole="Users" ToRole="Memberships" />
+    <NavigationProperty Name="Profile" Relationship="FoozballBetsModel.UserProfile" FromRole="Users" ToRole="Profiles" />
+    <NavigationProperty Name="ProfilesBSHes" Relationship="FoozballBetsModel.FK_ProfilesBSH_Users" FromRole="Users" ToRole="ProfilesBSH" />
+    <NavigationProperty Name="Roles" Relationship="FoozballBetsModel.UsersInRoles" FromRole="Users" ToRole="Roles" />
+  </EntityType>
+  <Association Name="MembershipApplication">
+    <End Role="Applications" Type="FoozballBetsModel.Application" Multiplicity="1" />
+    <End Role="Memberships" Type="FoozballBetsModel.Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Memberships">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleApplication">
+    <End Role="Applications" Type="FoozballBetsModel.Application" Multiplicity="1" />
+    <End Role="Roles" Type="FoozballBetsModel.Role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserApplication">
+    <End Role="Applications" Type="FoozballBetsModel.Application" Multiplicity="1" />
+    <End Role="Users" Type="FoozballBetsModel.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bets_Matches">
+    <End Role="Matches" Type="FoozballBetsModel.Match" Multiplicity="1" />
+    <End Role="Bets" Type="FoozballBetsModel.Bet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Matches">
+        <PropertyRef Name="MatchId" />
+      </Principal>
+      <Dependent Role="Bets">
+        <PropertyRef Name="MatchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bets_ProfilesBSH">
+    <End Role="ProfilesBSH" Type="FoozballBetsModel.ProfilesBSH" Multiplicity="1" />
+    <End Role="Bets" Type="FoozballBetsModel.Bet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProfilesBSH">
+        <PropertyRef Name="ProfileId" />
+      </Principal>
+      <Dependent Role="Bets">
+        <PropertyRef Name="ProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Matches_Teams">
+    <End Role="Teams" Type="FoozballBetsModel.Team" Multiplicity="1" />
+    <End Role="Matches" Type="FoozballBetsModel.Match" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teams">
+        <PropertyRef Name="TeamId" />
+      </Principal>
+      <Dependent Role="Matches">
+        <PropertyRef Name="Team1Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Matches_Teams1">
+    <End Role="Teams" Type="FoozballBetsModel.Team" Multiplicity="1" />
+    <End Role="Matches" Type="FoozballBetsModel.Match" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teams">
+        <PropertyRef Name="TeamId" />
+      </Principal>
+      <Dependent Role="Matches">
+        <PropertyRef Name="Team2Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MembershipUser">
+    <End Role="Users" Type="FoozballBetsModel.User" Multiplicity="1" />
+    <End Role="Memberships" Type="FoozballBetsModel.Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Memberships">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserProfile">
+    <End Role="Users" Type="FoozballBetsModel.User" Multiplicity="1" />
+    <End Role="Profiles" Type="FoozballBetsModel.Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Profiles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfilesBSH_Teams">
+    <End Role="Teams" Type="FoozballBetsModel.Team" Multiplicity="1" />
+    <End Role="ProfilesBSH" Type="FoozballBetsModel.ProfilesBSH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teams">
+        <PropertyRef Name="TeamId" />
+      </Principal>
+      <Dependent Role="ProfilesBSH">
+        <PropertyRef Name="TeamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfilesBSH_Users">
+    <End Role="Users" Type="FoozballBetsModel.User" Multiplicity="1" />
+    <End Role="ProfilesBSH" Type="FoozballBetsModel.ProfilesBSH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ProfilesBSH">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsersInRoles">
+    <End Role="Roles" Type="FoozballBetsModel.Role" Multiplicity="*" />
+    <End Role="Users" Type="FoozballBetsModel.User" Multiplicity="*" />
+  </Association>
+</Schema>
