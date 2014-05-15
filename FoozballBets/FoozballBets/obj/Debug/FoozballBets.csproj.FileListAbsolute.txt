@@ -28,3 +28,33 @@ c:\users\ivailo.ivanov\documents\visual studio 2012\Projects\FoozballBets\Foozba
 c:\users\ivailo.ivanov\documents\visual studio 2012\Projects\FoozballBets\FoozballBets\obj\Debug\FoozballBets.csprojResolveAssemblyReference.cache
 c:\users\ivailo.ivanov\documents\visual studio 2012\Projects\FoozballBets\FoozballBets\obj\Debug\FoozballBets.dll
 c:\users\ivailo.ivanov\documents\visual studio 2012\Projects\FoozballBets\FoozballBets\obj\Debug\FoozballBets.pdb
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\FoozballBets.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\FoozballBets.pdb
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\Antlr3.Runtime.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\DotNetOpenAuth.Core.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\EntityFramework.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\System.Web.Optimization.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\System.Web.Providers.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\WebGrease.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\EntityFramework.xml
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\DotNetOpenAuth.Core.xml
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\obj\Debug\FoozballBets.csprojResolveAssemblyReference.cache
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\obj\Debug\FoozballBets.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\obj\Debug\FoozballBets.pdb
