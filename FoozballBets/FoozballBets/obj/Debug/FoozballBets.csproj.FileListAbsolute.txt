@@ -58,3 +58,5 @@ C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\b
 C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\obj\Debug\FoozballBets.csprojResolveAssemblyReference.cache
 C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\obj\Debug\FoozballBets.dll
 C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\obj\Debug\FoozballBets.pdb
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\Devtalk.EF.CodeFirst.dll
+C:\Users\ivailo.ivanov\Documents\GitHub\FoosBallBets\FoozballBets\FoozballBets\bin\WebActivator.dll
