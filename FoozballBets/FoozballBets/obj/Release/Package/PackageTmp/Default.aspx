@@ -47,7 +47,7 @@
 				word-break: normal;
 			}
 	</style>
-	<%--<table class="tg">
+	<table class="tg">
 		<tr>
 			<th class="tg-031e"></th>
 			<th class="tg-031e">1</th>
@@ -168,6 +168,6 @@
 			<td class="tg-031e"></td>
 			<td class="tg-031e"></td>
 		</tr>
-	</table>--%>
+	</table>
 
 </asp:Content>
