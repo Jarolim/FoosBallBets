@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2a265cc84a4a46c0acb145102c563f32" Name="Diagram1">
+        <EntityTypeShape EntityType="FoozballBetsModel.Application" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoozballBetsModel.Bet" Width="1.5" PointX="12.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoozballBetsModel.Factor" Width="1.5" PointX="12.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoozballBetsModel.Match" Width="1.5" PointX="10.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoozballBetsModel.Membership" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoozballBetsModel.Profile" Width="1.5" PointX="7.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoozballBetsModel.ProfilesBSH" Width="1.5" PointX="10.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoozballBetsModel.Role" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoozballBetsModel.Team" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoozballBetsModel.User" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoozballBetsModel.UsersOpenAuthAccount" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FoozballBetsModel.UsersOpenAuthData" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="FoozballBetsModel.MembershipApplication" ManuallyRouted="false" />
+        <AssociationConnector Association="FoozballBetsModel.RoleApplication" ManuallyRouted="false" />
+        <AssociationConnector Association="FoozballBetsModel.UserApplication" ManuallyRouted="false" />
+        <AssociationConnector Association="FoozballBetsModel.FK_Bets_Matches" ManuallyRouted="false" />
+        <AssociationConnector Association="FoozballBetsModel.FK_Bets_ProfilesBSH" ManuallyRouted="false" />
+        <AssociationConnector Association="FoozballBetsModel.FK_Factor_Matches" ManuallyRouted="false" />
+        <AssociationConnector Association="FoozballBetsModel.FK_Matches_Teams" ManuallyRouted="false" />
+        <AssociationConnector Association="FoozballBetsModel.FK_Matches_Teams1" ManuallyRouted="false" />
+        <AssociationConnector Association="FoozballBetsModel.MembershipUser" ManuallyRouted="false" />
+        <AssociationConnector Association="FoozballBetsModel.UserProfile" ManuallyRouted="false" />
+        <AssociationConnector Association="FoozballBetsModel.FK_ProfilesBSH_Teams" ManuallyRouted="false" />
+        <AssociationConnector Association="FoozballBetsModel.FK_ProfilesBSH_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FoozballBetsModel.FK_dbo_UsersOpenAuthAccounts_dbo_UsersOpenAuthData_ApplicationName_MembershipUserName" ManuallyRouted="false" />
+        <AssociationConnector Association="FoozballBetsModel.UsersInRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

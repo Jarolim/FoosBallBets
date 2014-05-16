@@ -38,9 +38,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Devtalk.EF.CodeFirst">
-      <HintPath>..\packages\EFCodeFirst.CreateTablesOnly.1.0.2\lib\Devtalk.EF.CodeFirst.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -112,9 +109,6 @@
     </Reference>
     <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.0\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
-    </Reference>
-    <Reference Include="WebActivator">
-      <HintPath>..\packages\WebActivator.1.4.4\lib\net40\WebActivator.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -230,6 +224,10 @@
       <DependentUpon>FoozballBetsDatabase.edmx</DependentUpon>
       <LastGenOutput>FoozballBetsDatabase.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\bshbets - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\bshbets - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\foosballbetsbsh - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\foosballbetsbsh - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Profile.aspx" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -316,7 +314,6 @@
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Start\DontDropDbJustCreateTablesIfModelChangedStart.cs" />
     <Compile Include="Bet.aspx.cs">
       <DependentUpon>Bet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -439,7 +436,6 @@
   <ItemGroup>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
-      <SubType>Designer</SubType>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
